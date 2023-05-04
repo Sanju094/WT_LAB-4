@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Art Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        body {
+            border: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: violet;
+            color:brown;
+            padding: 100px;
+            text-align: center;
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 50fr);
+            grid-gap: 30px;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .item {
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+            font-size: 34px;
+            cursor: pointer;
+            justify-content: center;
+        }
+
+        #text-area {
+            display: none;
+            margin: 20px;
+            padding: 10px;
+            background-color: violet;
+            font-size: 70px;
+            color: brown;
+            border: none;
+            cursor: pointer;
+            border-color: rgb(248, 5, 5);
+        }
+
+        #buy-button {
+            display: none;
+            margin: 20px;
+            font-weight: 200;
+            font-size: 30px;
+            padding: 10px;
+            background-color: green;
+            color:white;
+            border: none;
+            cursor: pointer;
+            
+            border-color: rgb(240, 244, 14);
+            border-radius: 50px;
+        }
+
+        #total-price {
+            display: none;
+            margin: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            background-color: violet;
+            color: crimson;
+        }
+
+        .img {
+            padding: 5px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .item {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .item img,
+        .item .hoer {
+            transition: all 0.5s ease;
+        }
+
+        .hoer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.469);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            text-align: center;
+        }
+
+
+        .hoer h3 {
+            font-size: 300px;
+            text-align: center;
+            justify-content: center;
+            padding: 20px;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .item:hover .hoer {
+            opacity: 1;
+        }
+
+        .item:hover img {
+            transform: scale(1.1);
+        }
+
+        .img {
+            padding: 5px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .item {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .item img,
+        .item .hoer2 {
+            transition: all 0.5s ease;
+        }
+
+        .hoer2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.469);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            text-align: center;
+        }
+
+
+        .hoer2 h3 {
+            font-size: 300px;
+            text-align: center;
+            justify-content: center;
+            padding: 20px;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .item:hover .hoer2 {
+            opacity: 1;
+        }
+
+        .item:hover img {
+            transform: scale(1.1);
+        }
+
+        .img {
+            padding: 5px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .item {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .item img,
+        .item .hoer3 {
+            transition: all 0.5s ease;
+        }
+
+        .hoer3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.469);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            text-align: center;
+        }
+
+
+        .hoer3 h3 {
+            font-size: 300px;
+            text-align: center;
+            justify-content: center;
+            padding: 20px;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .item:hover .hoer3 {
+            opacity: 1;
+        }
+
+        .item:hover img {
+            transform: scale(1.1);
+        }
+
+        .img {
+            padding: 5px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .item {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .item img,
+        .item .hoer4 {
+            transition: all 0.5s ease;
+        }
+
+        .hoer4 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.469);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            text-align: center;
+        }
+
+
+        .hoer4 h3 {
+            font-size: 300px;
+            text-align: center;
+            justify-content: center;
+            padding: 20px;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .item:hover .hoer4 {
+            opacity: 1;
+        }
+
+        .item:hover img {
+            transform: scale(1.1);
+        }
+
+        .img {
+            padding: 5px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .item {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .item img,
+        .item .hoer5 {
+            transition: all 0.5s ease;
+
+        }
+
+        .hoer5 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.469);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            text-align: center;
+        }
+
+
+        .hoer5 h3 {
+            font-size: 300px;
+            text-align: center;
+            justify-content: center;
+            padding: 20px;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .item:hover .hoer5 {
+            opacity: 1;
+        }
+
+        .item:hover img {
+            transform: scale(1.1);
+        }
+
+        .img {
+            padding: 5px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .item {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .item img,
+        .item .hoer6 {
+            transition: all 0.5s ease;
+        }
+
+        .hoer6 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.469);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            text-align: center;
+        }
+
+
+        .hoer6 h3 {
+            font-size: 300px;
+            text-align: center;
+            justify-content: center;
+            padding: 20px;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .item:hover .hoer6 {
+            opacity: 1;
+        }
+
+        .item:hover img {
+            transform: scale(1.1);
+        }
+
+        #navbar{
+    position: sticky;
+    top: 0;
+    background-color:rgb(97,1,92);;
+    z-index: 10;
+    color:black
+  }
+ 
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><b><img src="./f2k1.png" height="55px" width="130px"></b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#about">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#portfolio">MISSION</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#more">MORE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./shop.html">SHOP</a>
+                    </li>
+                </ul>
+                <button class="btn p-2 my-lg-0 my-2 bg-light"><a href="./signin.html" target="blank">Log in</a></button>
+            </div>
+    </nav>
+
+
+
+    <div class="header">
+        <h1>SHOP YOUR GROCERIES</h1>
+    </div>
+    <div class="grid">
+        <div class="item">
+            <img src="./j1.jpg" alt="Painting 1" height="450">
+            <div class="hor"><br>
+                <h3>Price: $400</h3>
+
+            </div>
+        </div>
+        
+        <div class="item">
+            <img src="f14.jpg" alt="Painting 3" height="450">
+            <div class="hor3"><br>
+                <h3>Price: ₹120</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="spi4.webp" alt="Painting 4" height="450">
+            <div class="hor4"><br>
+                <h3>Price: ₹500</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f1.jpg" alt="Painting 5" height="450">
+            <div class="hor5"><br>
+                <h3>Price: ₹90</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f15.jpg" alt="Painting 6" height="450">
+            <div class="hor6"><br>
+                <h3>Price: ₹120</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f3.jpg" alt="Painting 6" height="450">
+            <div class="hoer7"><br>
+                <h3>Price: ₹900</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f4.jpg" alt="Painting 6" height="450">
+            <div class="hoer8">
+                <br>
+                <h3>Price: ₹200</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f5.jpg" alt="Painting 6" height="450">
+            <div class="hoer9">
+                <br>
+                <h3>Price: ₹50</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f6.jpg" alt="Painting 6" height="450">
+            <div class="hoer10">
+                <br>
+                <h3>Price: ₹90</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f7.jpg" alt="Painting 6" height="450">
+            <div class="hoer11">
+                <br>
+                <h3>Price: ₹90</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f8.jpg" alt="Painting 6" height="450">
+            <div class="hoer12">
+                <br>
+                <h3>Price: ₹100</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f9.jpg" alt="Painting 6" height="450">
+            <div class="hoer13">
+                <br>
+                <h3>Price: ₹160</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f10.jpg" alt="Painting 6" height="450">
+            <div class="hoer14">
+                <br>
+                <h3>Price: ₹150</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f11.jpg" alt="Painting 6" height="450">
+            <div class="hoer15">
+                <br>
+                <h3>Price: ₹250</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./f12.jpg" alt="Painting 6" height="450">
+            <div class="hoer16">
+                <br>
+                <h3>Price: ₹300</h3>
+            </div>
+        </div>
+		
+    </div>
+    <div id="text-area">
+        <h2 style="text-align: center;">Your Groceries</h2>
+    </div>
+    <center><button id="buy-button">Shop it</button></center>
+    <div id="total-price"></div>
+    <script id="rs">
+
+
+        const grid = document.querySelector(".grid");
+        const textArea = document.querySelector("#text-area");
+
+
+        const paintings = [ 
+            { name: "Jeera", price: 50 },
+            { name: "Chicken masala", price: 120 },
+            { name: "whole spices", price: 120 },
+            { name: "chilli powder", price: 90 },
+            { name: "Bhaji masala", price: 120 },
+            { name: "masalas", price: 900 },
+            { name: "coriander powder", price: 200 },
+            { name: "Lemon Pickle", price: 50 },
+            { name: "Veg Pickle", price: 90 },
+            { name: "Ginger garlic paste", price:90},
+            { name: "jeera powder", price:100},
+            { name: "Badam drink mix", price: 160},
+            { name: "Black pepper powder", price: 150},
+           
+            { name: "Methi powder", price: 250},
+            { name: "Gulab Jamun mix", price:300}
+
+        ];
+
+
+        grid.querySelectorAll(".item").forEach((item, index) => {
+            item.addEventListener("click", () => {
+
+
+                const nameInput = document.createElement("input");
+                nameInput.type = "text";
+                nameInput.setAttribute("style", "width:250px;height:50px;font-size:15px;");
+                nameInput.value = paintings[index].name;
+                nameInput.innerHTML = "<br></br>";
+                
+
+
+                const priceInput = document.createElement("input");
+                priceInput.type = "number";
+                priceInput.setAttribute("style", "width:230px;height:50px;font-size:15px;");
+                priceInput.value = paintings[index].price;
+
+
+
+                const copiesInput = document.createElement("input");
+                copiesInput.type = "number";
+                copiesInput.setAttribute("style", "width:230px;height:50px;font-size:15px;");
+                copiesInput.value = 1;
+                copiesInput.id = 'rk'
+
+                const aw = document.createElement("input");
+
+
+
+                textArea.appendChild(nameInput);
+                textArea.appendChild(priceInput);
+                textArea.appendChild(copiesInput);
+
+                textArea.appendChild(document.createTextNode(" "));
+
+
+
+
+                textArea.style.display = "block";
+                document.querySelector("#buy-button").style.display = "block";
+            });
+
+        });
+
+
+        document.querySelector("#buy-button").addEventListener("click", () => {
+            let totalPrice = 0;
+
+
+            textArea.querySelectorAll("input").forEach((input, index) => {
+                if (index % 3 == 2) {
+                    const copies = parseInt(input.value);
+                    const price = parseInt(textArea.querySelectorAll("input")[index - 1].value);
+                    totalPrice += copies * price;
+                }
+            });
+
+
+            document.querySelector("#total-price").textContent = "Total Price: ₹" + totalPrice;
+            document.querySelector("#total-price").style.display = "block";
+        });
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+
+</html>

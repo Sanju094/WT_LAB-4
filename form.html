@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Registration form</title>
+  <style>
+    #date{
+      width:200px
+    }
+    #file{
+      width:200px;
+    }
+  </style>
+
+</head>
+
+<body class="container col-12 " id="body">
+  <h1 class="text-center" id="head"><b>DISTRIBUTOR REGISTRATION FORM</b></h1>
+  <br><br><br>
+  <form class="bg-light" name="f"
+    style="border:0px solid black; font-size:15px; margin: 0;padding-left: 15px;" name="f" id="f"
+    action="http://localhost:4001/form" method="get">
+
+    <h4 class="text-left">Registration form for dealers and representatives</h4>
+
+    <div class="container mt-4">
+      <section>
+        <div class="row g-3 align-items-center">
+          <div class="col-auto ">
+            <label class="col-form-label" for="name" aria-required="true">Name</label>
+
+          </div>
+          <div class="col-auto">
+            <input type="text" class="form-control" placeholder="Firstname"  id="fname" name="fname" pattern="[A-Z]{1}[A-Za-z]{3,}" required>
+            
+          </div>
+          <br>
+          <br>
+          <div class="col-auto">
+            <input type="text" class="form-control" id="lname" placeholder="Lastname" pattern="[A-Z]{1}[A-Za-z]{2,}" name="lname" required>
+            
+          </div>
+        </div>
+    </div>
+    </section>
+    <br><br>
+    <section>
+
+      <div class="row g-3 align-items-center">
+        <div class="col-auto form-group">
+          <label class="col-form-label" for="id">Distributor ID</label>
+
+        </div>
+        <div class="col-auto">
+          <input type="text" class="form-control" placeholder="Enter your ID" id="id" name="id" pattern="[2]{1}[3]{1}[D]{1}[I]{1}[S]{1}[0-9]{3}">
+            
+        </div>
+    </section>
+    <br><br>
+    <section>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">Do you have a Facebook
+          account?</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio">
+          <label class="form-check-label">
+            &nbsp; Yes
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio">
+          <label class="form-check-label">
+            &nbsp; No
+          </label>
+        </div>
+      </div>
+    </section>
+    <br><br>
+    <section>
+      <div class="row g-3 align-items center">
+        <div class="col-auto">
+          <label>Facebook Username</label>
+        </div>
+        <div class="col-auto">
+          <input type="text" placeholder="eg: John_12" class="form-control">
+        </div>
+      </div>
+    </section>
+    <br<br><br>
+    <section>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">Gender</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" name="gen" id="male" type="radio">
+          <label class="form-check-label" for="male">
+            &nbsp; Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" name="gen" id="fem" type="radio">
+          <label class="form-check-label" for="fem">
+            &nbsp; Female
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" name="gen" id="oth" type="radio">
+          <label class="form-check-label">
+            &nbsp; Others
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <br>
+    <br>
+    <section>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label class="col-form-label" for="add">Address
+          </label>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="3" name="add" id="add" placeholder=" Enter your Address here"9></textarea>
+        </div>
+    </section>
+
+    <br>
+
+    <section>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto form group">
+          <label class="col-form-label" for="name" aria-required="true" required>Phone Number</label>
+
+        </div>
+        <div class="col-auto form-group">
+          <input type="text" value="+91" class="form-control" disabled>
+          </div>
+          <div class="col-auto form-group">
+          <input type="tel" min="10" max="10" placeholder="01234-56789" class="form-control" id="phno" name="phno" pattern="[6789]{1}[0-9]{9}" required>
+
+
+        </div>
+
+      </div>
+    </section>
+    <br>
+    <section>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label class="col-form-label" required>Email</label>
+
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-auto">
+          
+          <input type="email" placeholder="abc@gmail.com" id="em" name="em" class="form-control"  required>
+
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <br><br><br>
+
+    <h4 class="text-left">Representative and Recruiter (important info for compensation plan)</h4>
+
+    <section>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label class="col-form-label">Your Recruiter</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio">
+          <label class="form-check-label">
+            &nbsp; A dealer
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+          <label class="form-check-label">
+            &nbsp; A representative
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio">
+          <label class="form-check-label">
+            &nbsp; Registered directly
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <br>
+    <br>
+
+    <h4 class="text-left">Order Details</h4>
+
+    <section>
+
+      <label class="col-form-label" for="name" aria-required="true">Product 1</label>
+
+
+      <div class="dropdown" >
+
+        <select class="custom-select" required>
+          <option value="0">select</option>
+          <option value="1">Ghee</option>
+          <option value="2">Fresh Vegetables</option>
+          <option value="3">Chilli powder</option>
+          <option value="4">Cereals & Pulses</option>
+        </select>
+      </div>
+
+
+    </section>
+
+
+    <section>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label class="col-form-label" for="name" aria-required="true" required>Quantity for product 1</label>
+
+        </div>
+        <div class="col-auto">
+          <input type="number" min="1" max="100" class="form-control" id="name">
+
+
+        </div>
+
+      </div>
+    </section>
+
+    <br><br>
+    <h4 class="text-left">Payment Details</h4>
+
+    <section>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label class="col-form-label"  for="pay">Payment Mode</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio">
+          <label class="form-check-label" id="rem" name="pay">
+            &nbsp;Remittance
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio">
+          <label class="form-check-label" id="cash" name="cash">
+            &nbsp; Cash on delivery (meet up)
+          </label>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+
+
+
+    <div class="form-group">
+      <label for="exampleFormControlFile1">Amount paid receipt: </label>
+      <input type="file" class="form-control" id="file">
+    </div>
+
+    <br>
+    <br>
+    <div class="form-group">
+      <label >order Date: </label>
+      <input type="date" class="form-control" id="date" required>
+    </div>
+    <br><br>
+    
+
+    <input type="submit" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="reset" value="clear">
+
+  </form>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

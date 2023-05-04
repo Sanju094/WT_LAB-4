@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distributor form</title>
+  <script>
+    function formvalidate() {
+      var fn = document.f.fname.value;
+      var ln = document.f.lname.value;
+      var id = document.f.id.value;
+      var gm = document.f.male.value;
+      var gf = document.f.female.value;
+      var go = document.f.others.value;
+      var add = document.f.address.value;
+      var ph = document.f.phno.value;
+      var mail = document.f.mail.value;
+      var dea = document.f.dealer.value;
+      var rep = document.f.recru.value;
+      var reg = document.f.regis.value;
+      var rf = document.f.rf.value;
+      var mail2 = document.f.mail2.value;
+      var rem = document.f.rem.value;
+      var cash = document.f.cash.value;
+      var pro = document.f.cash.value;
+var dec=document.f.dec.value;
+      var errors = [];
+
+      if (fn == "")
+        errors[errors.length] = "First-Name must be filled out";
+
+      if (ln == "")
+        errors[errors.length] = "Last-Name must be filled out";
+      if (id == "")
+        errors[errors.length] = "id must be filled out";
+      if (fn == ln) {
+        errors[errors.length] = "First-Name and Last-Name must be different";
+
+      }
+      if (document.f.male.checked == 0 && document.f.female.checked == 0 && document.f.others.checked == 0) {
+        errors[errors.length] = "Gender must be selected";
+
+      }
+      if (add == 0) {
+        errors[errors.length] = "Address must be filled out";
+      }
+      else if (add.length < 20) {
+        errors[errors.length] = "Address must given upto 20 characters";
+
+      }
+      if (document.f.regis.checked == 0 && document.f.dealer.checked == 0 && document.f.recru.checked == 0) {
+        errors[errors.length] = "Recruiter should be Selected";
+      }
+      if (mail == mail2) {
+        errors[errors.length] = "mail should not be same";
+      }
+      if (document.f.rem.checked == 0 || document.f.cash.checked == 0) {
+        errors[errors.length] = "Type of Payment should be selected";
+      }
+      if (pro = "") {
+        errors[errors.length] = "Select the products needed"
+      }
+      if (document.f.dec.checked == 0)
+          errors[errors.length] = "Declaration must be selected";
+
+
+
+
+
+
+      if (errors.length > 0)
+        reportErrors(errors);
+
+
+      else {
+
+        alert('your appointment is successfully registered ');
+
+      }
+    }
+      function reportErrors(errors) {
+        var msg = "Please Enter Valid Data!\n";
+        for (var i = 0; i < errors.length; i++) {
+          var numError = i + 1;
+          msg += "\n" + numError + ". " + errors[i];
+        }
+        alert(msg);
+      }
+    
+  </script>
+  <style>
+    body {
+
+      background-color: darkcyan;
+    }
+
+    form {
+
+      background-color: lightgray;
+
+
+    }
+
+    .area {
+      width: 35px;
+    }
+
+    .div1 {
+      height: 1550px;
+      width: 40%;
+      border: 3px;
+      border-color: black;
+      text-align: left;
+      margin: auto;
+      padding: 10px;
+      background-color: lightgray;
+      max-height: 1450px;
+
+    }
+
+    .regbtn {
+      background-color: grey;
+      color: black;
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 8px 0;
+      border: solid;
+      cursor: pointer;
+      width: 40%;
+      opacity: 0.9;
+
+    }
+
+    .regbtn:hover {
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body align="center">
+  <center>
+    <h1 id="head"><b>DISTRIBUTOR REGISTRATION FORM</b></h1>
+  </center>
+  <div class="div1">
+    <form name="f" method="post" id="form" onsubmit="formvalidate()">
+      <h2><b>Registration form for dealers and representatives</b></h2>
+
+      <label for="fname">First name &emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;:</label>&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;
+      <input type="text" id="fname" name="fname" placeholder="Enter your Firstname" pattern=[A-Z]{1}[a-zA-Z]{2,}
+        required><br><br>
+      <label for="lname">Last name&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14; :</label>&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;
+      <input type="text" id="lname" name="lname" placeholder="Enter your Lastname" pattern=[A-Z]{1}[a-zA-Z]{2,}
+        required><br><br>
+      <label for="id">Distributor ID      &emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;: </label>&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;
+      <input type="text" id="id" name="id" placeholder="23DIS###" pattern="[2]{1}[3]{1}[D]{1}[I]{1}[S]{1}[0-9]{3}"
+        required>
+      <br><br>
+
+      <label>Do You have an facebook account?</label><br><br>
+      <input type="radio" id="yes" name="fa" value="yes">
+      <label for="yes">Yes</label><br>
+      <input type="radio" id="no" name="fa" value="female">
+      <label for="no">No</label><br><br>
+      <label>Facebook Username : </label>
+      <input type="text"><br><br>
+
+      <label>Gender :</label><br><br>
+      <input type="radio" id="male" name="gen" value="male">
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gen" value="female">
+      <label for="female">Female</label><br>
+      <input type="radio" id="others" name="gen" value="others">
+      <label for="others">Others</label><br><br>
+
+      <label for="address">Address :</label>
+      <textarea type="textarea" id="address" placeholder="Enter your address" style="width: 280px"
+        name="address"></textarea><br><br>
+      <label for="phno">Phone Number : </label>
+      <input type="tel" value="+91" class="area" disabled>-
+      <input type="tel" id="phno" name="phno" max="10" min="10" required placeholder="01234-56789"
+        pattern="[6789]{1}[0-9]{9}"><br><br>
+      <label for="mail">Email :</label>
+      <input type="email" id="mail" name="mail" placeholder="abc@gmail.com"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required><br><br>
+
+
+      <h2><b>Representative and Recruiter (important info for compensation plan)</b></h2>
+      <label>Your Recruiter : </label><br><br>
+      <input type="radio" id="dealer" name="recru" value="dealer">
+      <label for="dealer">A Dealer</label><br>
+      <input type="radio" id="repre" name="recru" value="repre">
+      <label for="repre">A Representative</label><br>
+      <input type="radio" id="regis" name="recru" value="regis">
+      <label for="regis">Registered Directly</label><br><br>
+
+
+      <label for="rf">Recruiter Name : </label>
+      <input type="text" name="rf" id="rf" pattern="[A-Z]{1}[A-Za-z]{2,}" min="3" placeholder="Enter your name"
+        required>
+      <br><br>
+
+      <label for="mail2">Recruiter Email :</label>
+      <input type="email" id="mail2" name="mail2" required placeholder="abc@gmail.com"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$">
+      <br><br>
+
+
+      <h2>Order Details </h2>
+      <label for="pro">product 1 :</label>
+      <select id="pro" name="pro" required>
+        <option>Ghee</option>
+        <option>Fresh Vegetables</option>
+        <option>Chilli Powder</option>
+        <option>Cereals & Pulses</option>
+        <option>Milk products</option>
+      </select><br><br>
+      <label>Quantity for Product 1 :</label>
+      <input type="number" class="area">
+
+      <h2>Payment Details</h2>
+      <label>Payment Mode : </label><br><br>
+      <input type="radio" id="rem" name="pm" value="rem">
+      <label for="rem">Remittance</label><br>
+      <input type="radio" id="cash" name="pm" value="cash">
+      <label for="cash">Cash on Delivery(meet up)</label><br><br>
+
+      <label>Amount paid receipt :</label>
+      <input type="file"><br><br>
+
+      <label>Order Date : </label>
+      <input type="date"><br><br>
+      <input type="checkbox" id="dec">I hereby declare that above statements are true to my knowledge</input><br><br>
+      <b>
+        <center><input type="submit" value="Submit" class="regbtn"></center>
+      </b>
+
+    </form>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</html>
